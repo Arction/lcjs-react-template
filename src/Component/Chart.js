@@ -1,34 +1,37 @@
-import { lightningChart } from '@arction/lcjs';
-import React, { Component } from 'react';
+import { lightningChart } from '@arction/lcjs'
+import React, { Component } from 'react'
 
 class Chart extends Component {
     constructor(props) {
         super(props)
         // Create the chartId for the container.
-        this.chartId = Math.trunc(Math.random() * 100)
+        this.chartId = Math.trunc(Math.random() * 100000)
     }
-    // Define the function which create a chart.
+
+    // Define the function which creates a chart.
     createChart() {
         // create a chartXY.
         this.chart = lightningChart().ChartXY({ containerId: this.chartId })
         // Set the Title to the chart.
         this.chart.setTitle('Getting Started')
         // Add the LineSeries to the chart.
-        const lineSeries = this.chart.addLineSeries()
-        // Set the strokStyle for the LineSeries.
-        lineSeries.setStrokeStyle((style) => style.setThickness(5))
+        this.lineSeries = this.chart.addLineSeries()
+        // Set the strokeStyle for the LineSeries.
+        this.lineSeries.setStrokeStyle((style) => style.setThickness(5))
         // Add the data point to the chart.
-        lineSeries.add(this.props.data)
+        this.lineSeries.add(this.props.data)
     }
+
     // Call the function to create the chart after rendering the DOM.
     componentDidMount() {
         this.createChart()
     }
-   // Dispose the chart after the component was removed from the DOM
-    componentWillUnmount(){
+
+    componentWillUnmount() {
+        // Dispose the chart before the component is removed from the DOM
         this.chart.dispose()
     }
-   
+
     // 
     render() {
         // return a div includes chart.
@@ -37,6 +40,5 @@ class Chart extends Component {
         )
     }
 }
-
 
 export default Chart
