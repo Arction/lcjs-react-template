@@ -4,13 +4,13 @@ import React, { Component } from 'react'
 class Chart extends Component {
     constructor(props) {
         super(props)
-        // Create the chartId for the container.
+        // Cache the ChartID.
         this.chartId = Math.trunc(Math.random() * 100000)
     }
 
     // Define the function which creates a chart.
     createChart() {
-        // create a chartXY.
+        // create a chartXY inside a html Div element, the containerID indicated the chartXY will be created to which div.
         this.chart = lightningChart().ChartXY({ containerId: this.chartId })
         // Set the Title to the chart.
         this.chart.setTitle('Getting Started')
@@ -22,19 +22,20 @@ class Chart extends Component {
         this.lineSeries.add(this.props.data)
     }
 
-    // Call the function to create the chart after rendering the DOM.
+    // After rendering a virtual Dom, which includes a div element. We call the function to creates the chart inside it.
     componentDidMount() {
         this.createChart()
     }
 
     componentWillUnmount() {
-        // Dispose the chart before the component is removed from the DOM
+        // We suggest to dispose the chart for saving the computer memory.
+        // Since the chart was built inside the html iframe, it will affect the performance when user add mutiple charts.
         this.chart.dispose()
     }
 
     // 
     render() {
-        // return a div includes chart.
+        // rending a virtual Dom, which includes a div element. The LightningchartXY will be created inside it.
         return (
             <div id={this.chartId} className='fill'></div>
         )
