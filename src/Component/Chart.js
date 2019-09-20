@@ -29,7 +29,7 @@ class Chart extends Component {
 
     componentWillUnmount() {
         // We suggest to dispose the chart for saving the computer memory.
-        // Since the chart was built inside the html iframe, it will affect the performance when user add mutiple charts.
+        // Since the chart was built inside the html iframe, it will affect the performance when user add multiple charts.
         this.chart.dispose()
     }
 
