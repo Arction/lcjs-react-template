@@ -34,7 +34,7 @@ class Chart extends Component {
     }
 
     render() {
-        // rending component, which includes a div element. The chart will be created inside the div element.
+        // render a component, which includes a div element. The chart will be created inside the div element.
         return (
             <div id={this.chartId} className='fill'></div>
         )
