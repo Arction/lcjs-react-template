@@ -4,38 +4,37 @@ import React, { Component } from 'react'
 class Chart extends Component {
     constructor(props) {
         super(props)
-        // Cache the ChartID.
+        // Generate random ID to use as the containerId for the chart and the target div id.
         this.chartId = Math.trunc(Math.random() * 100000)
     }
 
-    // Define the function which creates a chart.
+    // Define a function which creates a chart.
     createChart() {
-        // create a chartXY inside a html Div element, the containerID indicated the chartXY will be created to which div.
+        // Create a chartXY, the containerId determines which div the chart will be rendered to.
         this.chart = lightningChart().ChartXY({ containerId: this.chartId })
-        // Set the Title to the chart.
+        // Set the Title of the chart.
         this.chart.setTitle('Getting Started')
-        // Add the LineSeries to the chart.
+        // Add LineSeries to the chart.
         this.lineSeries = this.chart.addLineSeries()
-        // Set the strokeStyle for the LineSeries.
+        // Set the strokeStyle of the lineSeries.
         this.lineSeries.setStrokeStyle((style) => style.setThickness(5))
-        // Add the data point to the chart.
+        // Add data points from props to the lineSeries.
         this.lineSeries.add(this.props.data)
     }
 
-    // After rendering a virtual Dom, which includes a div element. We call the function to creates the chart inside it.
     componentDidMount() {
+        // Chart can only be created when the component has mounted the DOM as 
+        // the chart needs the element with specified containerId to exist in the DOM
         this.createChart()
     }
 
     componentWillUnmount() {
-        // We suggest to dispose the chart for saving the computer memory.
-        // Since the chart was built inside the html iframe, it will affect the performance when user add multiple charts.
+        // "dispose" should be called when the component will unmount to free all the resources used by the chart.
         this.chart.dispose()
     }
 
-    // 
     render() {
-        // rending a virtual Dom, which includes a div element. The LightningchartXY will be created inside it.
+        // render a component, which includes a div element. The chart will be created inside the div element.
         return (
             <div id={this.chartId} className='fill'></div>
         )
