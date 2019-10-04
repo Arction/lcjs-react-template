@@ -1,3 +1,9 @@
+# LightningChart<sup>&#174;</sup> JS React usage example
+
+This repository showcases how to integrate LightingChart<sup>&#174;</sup> JS charting library to a React application.
+
+More information about LightningChart<sup>&#174;</sup> JS can be found from our website, https://www.arction.com/lightningchart-js/.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
