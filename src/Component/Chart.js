@@ -5,13 +5,13 @@ class Chart extends Component {
     constructor(props) {
         super(props)
         // Generate random ID to use as the containerId for the chart and the target div id.
-        this.chartId = Math.trunc(Math.random() * 100000)
+        this.chartId = Math.trunc(Math.random() * 100000).toString(10)
     }
 
     // Define a function which creates a chart.
     createChart() {
         // Create a chartXY, the containerId determines which div the chart will be rendered to.
-        this.chart = lightningChart().ChartXY({ containerId: this.chartId })
+        this.chart = lightningChart().ChartXY({ container: this.chartId })
         // Set the Title of the chart.
         this.chart.setTitle('Getting Started')
         // Add LineSeries to the chart.
