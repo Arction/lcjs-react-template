@@ -1,0 +1,16 @@
+{
+	"compileOnSave": true,
+	"compilerOptions": {
+		"target": "ESNext",
+		"module": "ES6",
+		"moduleResolution": "node",
+		"declaration": true,
+		"outDir": "./dist",
+		"declarationDir": "types",
+		"emitDeclarationOnly": true,
+		"allowSyntheticDefaultImports": true,
+		"strict": true,
+		"jsx": "react"
+	},
+	"exclude": ["node_modules", "dist", "temp"]
+}

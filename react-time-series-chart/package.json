@@ -1,0 +1,58 @@
+{
+	"name": "@arction/react-time-series-chart",
+	"author": "LightningChart Ltd.",
+	"license": "MIT",
+	"version": "0.0.36",
+	"description": "A React component for interactive, heavy-duty Time Series Charts",
+	"homepage": "https://github.com/Arction/lcjs-react-template/react-time-series-chart",
+	"type": "module",
+	"main": "dist/cjs/index.js",
+	"module": "dist/esm/index.js",
+	"types": "dist/types/index.d.ts",
+	"engines": {
+		"node": ">=12"
+	},
+	"files": [
+		"dist",
+		"LICENSE",
+		"README.md",
+		"package.json"
+	],
+	"scripts": {
+		"build": "rm -r dist & rollup -c --bundleConfigAsCjs",
+		"ts": "shx rm -r temp & tsc -p ./tsconfig.json",
+		"pub": "npm version patch && npm run build --no-git-tag-version && npm publish"
+	},
+	"keywords": [
+		"Arction",
+		"lightningChart",
+		"lightning chart",
+		"chartXY",
+		"Chart",
+		"React Chart",
+		"Time series",
+		"Time series chart",
+		"Time chart",
+		"Time domain chart",
+		"Time axis"
+	],
+	"dependencies": {
+		"@arction/lcjs": "^4.2.1"
+	},
+	"peerDependencies": {
+		"react": "^16.8.0"
+	},
+	"devDependencies": {
+		"@rollup/plugin-commonjs": "^25.0.5",
+		"@rollup/plugin-node-resolve": "^15.2.3",
+		"@rollup/plugin-typescript": "^11.1.5",
+		"@types/react": "^18.2.28",
+		"@types/rollup-plugin-peer-deps-external": "^2.2.3",
+		"rollup": "^4.0.2",
+		"rollup-plugin-dts": "^6.1.0",
+		"rollup-plugin-peer-deps-external": "^2.2.4",
+		"shx": "^0.3.4",
+		"tslib": "^2.6.2",
+		"typescript": "^5.2.2"
+	}
+}
