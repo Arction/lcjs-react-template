@@ -4,57 +4,50 @@
 // However, with more charts visible at once, this gives an incredible performance advantage, since all charts use a shared LC context.
 // See usage example in ./Components/MyChartComponent.js and ./App.js
 
-import { createContext, useEffect, useRef, useState } from "react";
+import { createContext, useEffect, useRef, useState, useId } from "react";
 import { lightningChart } from "@arction/lcjs";
 
 export const LCContext = createContext(null);
 
 export function LCHost(props) {
-  const canvasRef = useRef(null);
-  const [lcState, setLcState] = useState(null);
+  const [canvasState, setCanvasState] = useState(null);
+  const lcRef = useRef(null);
+  const id = useId();
+  const [lcReady, setLcReady] = useState(false);
 
   useEffect(() => {
-    if (typeof window === undefined) {
-      return () => {};
-    }
-    if (
-      !lcState &&
-      canvasRef.current &&
-      canvasRef.current instanceof HTMLCanvasElement
-    ) {
+    if (!lcRef.current && canvasState && !lcReady) {
       try {
-        const lc = lightningChart({
+        lcRef.current = lightningChart({
           sharedContextOptions: {
-            canvas: canvasRef.current,
+            canvas: canvasState,
             useIndividualCanvas: false,
           },
         });
-        setLcState(lc);
+        setLcReady(true);
       } catch (e) {
         console.error(e);
       }
     }
 
     return () => {
-      if (lcState && "dispose" in lcState) {
-        lcState.dispose();
+      if (lcRef.current && "dispose" in lcRef.current) {
+        lcRef.current.dispose();
+        lcRef.current = null;
+        setLcReady(false);
       }
     };
-  }, [setLcState, lcState]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [lcRef, canvasState, setLcReady]);
 
   return (
-    <div
-      style={{
-        ...props.style,
-        position: "absolute",
-        left: "0",
-        width: "100%",
-        height: "100%",
-        pointerEvents: "auto",
-      }}
-    >
-      {typeof window !== undefined && <canvas ref={canvasRef}></canvas>}
-      <LCContext.Provider value={lcState}>{props.children}</LCContext.Provider>
-    </div>
+    <>
+      <canvas key={id} ref={(newRef) => setCanvasState(newRef)}></canvas>
+      {canvasState && lcRef.current !== undefined && (
+        <LCContext.Provider value={lcRef.current}>
+          {props.children}
+        </LCContext.Provider>
+      )}
+    </>
   );
 }
