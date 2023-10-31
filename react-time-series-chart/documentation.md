@@ -99,3 +99,9 @@ const myLCJSTheme = makeFlatTheme({
     }}
 />
 ```
+
+## Streaming data
+
+`react-time-series-chart` is currently not optimized for handling streaming data. Please see
+[LightningChart JS React Documentation](https://lightningchart.com/js-charts/docs/frameworks/react/) for best practices in handling
+streaming data. Long story short; new data points should not result in series being cleared - new data points should be simply appended in.
