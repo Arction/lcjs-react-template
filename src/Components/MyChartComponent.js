@@ -1,29 +1,37 @@
 import { Themes } from "@arction/lcjs";
-import React, { useEffect, useState, useContext } from "react";
+import { useEffect, useState, useContext, useRef } from "react";
 import { LCContext } from "../LC";
 
-const MyChartComponent = (props) => {
+export function MyChartComponent(props) {
   const { id, data } = props;
   const lc = useContext(LCContext);
   const [charts, setCharts] = useState(undefined);
+  const canvasRef = useRef(null);
 
   useEffect(() => {
-    const container = document.getElementById(id);
+    const container = canvasRef.current;
     if (!container || !lc) {
       return;
     }
-    const chart = lc.ChartXY({
-      theme: Themes.darkGold,
-      container,
-    });
-    const lineSeries = chart.addLineSeries({
-      dataPattern: { pattern: "ProgressiveX" },
-    });
-    setCharts({ chart, lineSeries });
+    let chart;
+    try {
+      chart = lc.ChartXY({
+        theme: Themes.light,
+        container,
+      });
+      const lineSeries = chart.addLineSeries({
+        dataPattern: { pattern: "ProgressiveX" },
+      });
+      setCharts({ chart, lineSeries });
+    } catch (e) {
+      console.error(e);
+    }
     return () => {
-      chart.dispose();
+      if (chart) {
+        chart.dispose();
+      }
     };
-  }, [id, lc]);
+  }, [id, lc, canvasRef]);
 
   useEffect(() => {
     if (!charts || !data) {
@@ -32,7 +40,5 @@ const MyChartComponent = (props) => {
     charts.lineSeries.clear().addArrayY(data);
   }, [charts, data]);
 
-  return <div id={id} style={{ width: "100%", height: "100%" }}></div>;
-};
-
-export default MyChartComponent;
+  return <div ref={canvasRef} className="chart"></div>;
+}

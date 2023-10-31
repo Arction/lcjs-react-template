@@ -1,6 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
-import MyChartComponent from "./Components/MyChartComponent";
+import { MyChartComponent } from "./Components/MyChartComponent";
 import { LCHost } from "./LC";
 
 const genRandomData = () => {
