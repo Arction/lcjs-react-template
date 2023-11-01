@@ -1,0 +1,43 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+
+	// Typescript
+	"typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis": true,
+	"typescript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
+	"typescript.preferences.importModuleSpecifier": "non-relative",
+
+	// Editor
+	"editor.fontSize": 10,
+	"editor.hover.delay": 150,
+	"editor.multiCursorModifier": "ctrlCmd",
+	"eslint.run": "onSave",
+	"editor.snippetSuggestions": "top",
+	"editor.renderWhitespace": "boundary",
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": true
+	},
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+
+	//  Other
+	"reactSnippets.settings.prettierEnabled": true,
+	"git.mergeEditor": true,
+	"editor.minimap.enabled": false,
+	"editor.minimap.showSlider": "always",
+	"workbench.startupEditor": "none",
+
+	"javascript.format.semicolons": "ignore",
+	"typescript.format.semicolons": "ignore",
+	"typescript.updateImportsOnFileMove.enabled": "always",
+	"javascript.updateImportsOnFileMove.enabled": "always",
+	"[typescriptreact]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"editor.unicodeHighlight.invisibleCharacters": false,
+	"git.pullTags": false,
+	"editor.inlineSuggest.enabled": true,
+	"github.copilot.advanced": {},
+	"cSpell.language": "en-GB,en-US",
+	"git.confirmSync": false,
+	"editor.inlineSuggest.showToolbar": "always",
+	"editor.formatOnSave": true
+}

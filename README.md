@@ -1,3 +1,7 @@
+# LightningChart JS x React template
+
+This is a minimal example of using LightningChart JS in React.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 Run app with:
@@ -14,3 +18,7 @@ Files of interest:
 Learn more about LightningChart JS and React [here](https://lightningchart.com/js-charts/docs/frameworks/react/).
 
 Learn more about connecting to real-time data sources [here](https://lightningchart.com/js-charts/docs/basic-topics/real-time-data/)
+
+## react-time-series-chart
+
+For a plug-and-play library for React time series chart component, see [react-time-series-chart](./react-time-series-chart/)

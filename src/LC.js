@@ -13,10 +13,10 @@ export function LCHost(props) {
   const [canvasState, setCanvasState] = useState(null);
   const lcRef = useRef(null);
   const id = useId();
-  const [lcReady, setLcReady] = useState(false);
+  const [lcState, setLcState] = useState(undefined);
 
   useEffect(() => {
-    if (!lcRef.current && canvasState && !lcReady) {
+    if (!lcRef.current && canvasState) {
       try {
         lcRef.current = lightningChart({
           sharedContextOptions: {
@@ -24,7 +24,7 @@ export function LCHost(props) {
             useIndividualCanvas: false,
           },
         });
-        setLcReady(true);
+        setLcState(lcRef.current);
       } catch (e) {
         console.error(e);
       }
@@ -34,20 +34,15 @@ export function LCHost(props) {
       if (lcRef.current && "dispose" in lcRef.current) {
         lcRef.current.dispose();
         lcRef.current = null;
-        setLcReady(false);
+        setLcState(undefined);
       }
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [lcRef, canvasState, setLcReady]);
+  }, [canvasState]);
 
   return (
     <>
       <canvas key={id} ref={(newRef) => setCanvasState(newRef)}></canvas>
-      {canvasState && lcRef.current !== undefined && (
-        <LCContext.Provider value={lcRef.current}>
-          {props.children}
-        </LCContext.Provider>
-      )}
+      <LCContext.Provider value={lcState}>{props.children}</LCContext.Provider>
     </>
   );
 }
