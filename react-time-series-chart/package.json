@@ -17,12 +17,14 @@
 		"dist",
 		"LICENSE",
 		"README.md",
+		"CHANGELOG.md",
 		"package.json"
 	],
 	"scripts": {
-		"build": "rm -r dist & rollup -c --bundleConfigAsCjs",
 		"ts": "shx rm -r temp & tsc -p ./tsconfig.json",
-		"pub": "npm version patch && npm run build --no-git-tag-version && npm publish"
+		"build": "rm -r dist & rollup -c --bundleConfigAsCjs",
+		"pack": "npm run build && sh ./release/package.sh",
+		"pub": "npm version patch && npm run pack --no-git-tag-version && npm publish ./package"
 	},
 	"keywords": [
 		"Arction",
