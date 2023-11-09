@@ -15,6 +15,8 @@ Files of interest:
 - [Using LCHost and the above line chart component](./src/App.js)
 - [LCHost + LCContext implementations](./src/LC.js)
 
+License key should be supplied in [LC.js](./src/LC.js)
+
 Learn more about LightningChart JS and React [here](https://lightningchart.com/js-charts/docs/frameworks/react/).
 
 Learn more about connecting to real-time data sources [here](https://lightningchart.com/js-charts/docs/basic-topics/real-time-data/)

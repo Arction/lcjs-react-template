@@ -7,6 +7,9 @@
 import { createContext, useEffect, useRef, useState, useId } from "react";
 import { lightningChart } from "@arction/lcjs";
 
+// https://lightningchart.com/js-charts/#license-key
+const lcjsLicenseKey = undefined;
+
 export const LCContext = createContext(null);
 
 export function LCHost(props) {
@@ -19,6 +22,7 @@ export function LCHost(props) {
     if (!lcRef.current && canvasState) {
       try {
         lcRef.current = lightningChart({
+          license: lcjsLicenseKey,
           sharedContextOptions: {
             canvas: canvasState,
             useIndividualCanvas: false,
