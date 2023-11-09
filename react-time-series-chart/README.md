@@ -12,7 +12,8 @@ npm i @arction/react-time-series-chart
 
 ## Licensing
 
-Using `react-time-series-chart` requires a license key. Get a free 30 day trial from [our web site](https://lightningchart.com/js-charts/).
+Using `react-time-series-chart` requires a license key. Get a free 30 day trial from
+[our web site](https://lightningchart.com/js-charts/#license-key).
 
 ## Basic usage
 
