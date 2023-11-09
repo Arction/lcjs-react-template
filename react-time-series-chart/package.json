@@ -43,7 +43,7 @@
 		"@arction/lcjs": "^5.0.1"
 	},
 	"peerDependencies": {
-		"react": "^16.8.0"
+		"react": ">=16.8.0"
 	},
 	"devDependencies": {
 		"@rollup/plugin-commonjs": "^25.0.5",
