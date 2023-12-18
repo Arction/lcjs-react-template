@@ -82,7 +82,7 @@ export function LightningChartXY(props: LightningChartXYProps) {
 		newChart.getDefaultAxisX().setTickStrategy(AxisTickStrategies.DateTime)
 		setChart(newChart)
 		return () => {
-			newChart.dispose()
+			lc.dispose()
 		}
 	}, [license, licenseInformation, id, theme])
 
