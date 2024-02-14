@@ -38,4 +38,4 @@ changing the Color Theme.
 
 ## Documentation
 
-For more information check our [github page](https://github.com/Arction/lcjs-react-template/react-time-series-chart)
+For more information check our [github page](https://github.com/Arction/lcjs-react-template/tree/master/react-time-series-chart)
