@@ -2,7 +2,7 @@
 	"name": "@arction/react-time-series-chart",
 	"author": "LightningChart Ltd.",
 	"license": "MIT",
-	"version": "0.0.5",
+	"version": "0.0.6",
 	"description": "A React component for interactive, heavy-duty Time Series Charts",
 	"homepage": "https://github.com/Arction/lcjs-react-template/tree/master/react-time-series-chart",
 	"type": "module",
