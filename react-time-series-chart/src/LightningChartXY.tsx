@@ -56,7 +56,7 @@ export interface LightningChartXYProps {
  * 	/>
  * ```
  *
- * For documentation and more information, please see [react-time-series-chart GitHub repository](https://github.com/Arction/lcjs-react-template/react-time-series-chart)
+ * For documentation and more information, please see [react-time-series-chart GitHub repository](https://github.com/Arction/lcjs-react-template/tree/master/react-time-series-chart)
  */
 export function LightningChartXY(props: LightningChartXYProps) {
 	const { license, licenseInformation, id, className, theme, data, chartConfiguration, seriesConfiguration } = props
