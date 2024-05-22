@@ -1,4 +1,9 @@
-import { Themes, ChartXY, PointLineAreaSeries, emptyFill } from "@arction/lcjs";
+import {
+  Themes,
+  ChartXY,
+  PointLineAreaSeries,
+  emptyFill,
+} from "@lightningchart/lcjs";
 import { useEffect, useState, useContext, useId } from "react";
 import { LCContext } from "../LC";
 

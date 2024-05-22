@@ -40,7 +40,7 @@
 		"Time axis"
 	],
 	"dependencies": {
-		"@arction/lcjs": "^5.0.5"
+		"@lightningchart/lcjs": "^5.2.1"
 	},
 	"peerDependencies": {
 		"react": ">=16.8.0"

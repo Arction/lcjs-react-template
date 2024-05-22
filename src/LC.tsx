@@ -11,7 +11,7 @@ import React, {
   useState,
   PropsWithChildren,
 } from "react";
-import { LightningChart, lightningChart } from "@arction/lcjs";
+import { LightningChart, lightningChart } from "@lightningchart/lcjs";
 
 export const LCContext = createContext<undefined | LightningChart>(undefined);
 

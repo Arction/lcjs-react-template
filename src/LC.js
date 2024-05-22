@@ -5,7 +5,7 @@
 // See usage example in ./Components/MyChartComponent.js and ./App.js
 
 import { createContext, useEffect, useRef, useState } from "react";
-import { lightningChart } from "@arction/lcjs";
+import { lightningChart } from "@lightningchart/lcjs";
 
 // https://lightningchart.com/js-charts/#license-key
 const lcjsLicenseKey = undefined;

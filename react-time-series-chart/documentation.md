@@ -8,28 +8,28 @@ reference LightningChart JS API directly. For more materials, refer to Lightning
 
 Theme can be specified using the `theme` prop.
 
-1. Use preset Theme from `@arction/lcjs`
+1. Use preset Theme from `@lightningchart/lcjs`
 
 ```bash
-npm i @arction/lcjs
+npm i @lightningchart/lcjs
 ```
 
 ```tsx
-import { Themes } from '@arction/lcjs'
+import { Themes } from '@lightningchart/lcjs'
 <LightningChartXY
 	...
 	theme={Themes.light}
 />
 ```
 
-2. Use flat color theme from `@arction/lcjs-themes`
+2. Use flat color theme from `@lightningchart/lcjs-themes`
 
 ```bash
-npm i @arction/lcjs-themes
+npm i @lightningchart/lcjs-themes
 ```
 
 ```tsx
-import { flatThemeLight } from '@arction/lcjs-themes'
+import { flatThemeLight } from '@lightningchart/lcjs-themes'
 <LightningChartXY
 	...
 	theme={flatThemeLight}
@@ -39,12 +39,12 @@ import { flatThemeLight } from '@arction/lcjs-themes'
 3. Use self-made color theme made using the [online Color Theme editor](https://arction.github.io/lcjs-themes/)
 
 ```bash
-npm i @arction/lcjs @arction/lcjs-themes
+npm i @lightningchart/lcjs @lightningchart/lcjs-themes
 ```
 
 ```tsx
-import { makeFlatTheme } from '@arction/lcjs-themes'
-import { ColorHEX } from '@arction/lcjs'
+import { makeFlatTheme } from '@lightningchart/lcjs-themes'
+import { ColorHEX } from '@lightningchart/lcjs'
 // Created with LCJS Theme Editor https://github.com/Arction/lcjs-themes
 const myLCJSTheme = makeFlatTheme({
 	isDark: true,

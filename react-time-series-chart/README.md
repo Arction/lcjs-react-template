@@ -7,7 +7,7 @@
 ## Installation
 
 ```bash
-npm i @arction/react-time-series-chart
+npm i @lightningchart/react-time-series-chart
 ```
 
 ## Licensing

@@ -1,5 +1,13 @@
 import React, { useEffect, useState } from 'react'
-import { ChartXY, LineSeries, lightningChart, Point, AppDeploymentLicenseInformation, Theme, AxisTickStrategies } from '@arction/lcjs'
+import {
+	ChartXY,
+	LineSeries,
+	lightningChart,
+	Point,
+	AppDeploymentLicenseInformation,
+	Theme,
+	AxisTickStrategies,
+} from '@lightningchart/lcjs'
 
 export interface LightningChartXYProps {
 	/**
