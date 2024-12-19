@@ -1,8 +1,8 @@
 {
-	"name": "@arction/react-time-series-chart",
+	"name": "@lightningchart/react-time-series-chart",
 	"author": "LightningChart Ltd.",
 	"license": "MIT",
-	"version": "0.0.6",
+	"version": "0.0.8",
 	"description": "A React component for interactive, heavy-duty Time Series Charts",
 	"homepage": "https://github.com/Arction/lcjs-react-template/tree/master/react-time-series-chart",
 	"type": "module",
@@ -24,7 +24,7 @@
 		"ts": "shx rm -r temp & tsc -p ./tsconfig.json",
 		"build": "rm -r dist & rollup -c --bundleConfigAsCjs",
 		"pack": "npm run build && sh ./release/package.sh",
-		"pub": "npm version patch && npm run pack --no-git-tag-version && npm publish ./package"
+		"pub": "npm version patch && npm run pack --no-git-tag-version && npm publish --access=public ./package"
 	},
 	"keywords": [
 		"Arction",
